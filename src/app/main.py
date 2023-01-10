@@ -1,5 +1,5 @@
 import click
-from batch.cli.calculator import main as cal_main
+from cli.calculator import main as cal_main
 
 @click.group()
 def main():
