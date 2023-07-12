@@ -1,25 +1,32 @@
+import logging
+from container import inject
+from datetime import datetime
 
+@inject
 def add(
-    x: int = 2
-    , y: int = 1
+    log: logging.Logger
+    , x: int
+    , y: int
 ) -> int:
-    """덧셈 함수
+    """_summary_
 
-    Args
-    ----
-    x: int
-    y: int
+    Args:
+        x (int): _description_
+        y (int): _description_
+        log (logging.Logger): _description_
 
-    Returns
-    -------
-    : int
-         x + y 합
+    Returns:
+        int: _description_
     """
-    return x + y
+    result = x + y
+    log.debug(result)
+    return result
 
+@inject
 def sub(
-    x: int = 2
-    , y: int = 1
+    log: logging.Logger
+    , x: int
+    , y: int
 ) -> int:
     """뺄셈 함수
 
@@ -35,9 +42,11 @@ def sub(
     """
     return x - y
 
+@inject
 def mul(
-    x: int = 2
-    , y: int = 1
+    log: logging.Logger
+    , x: int
+    , y: int
 ) -> int:
     """곱셈 함수
 
@@ -51,7 +60,9 @@ def mul(
     : int
          x * y 곱
     """
-    return x * y
+    result = x * y
+    log.debug(result)
+    return result
 
 def div(
     x: int = 2
